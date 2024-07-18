@@ -4,7 +4,13 @@ const cors = require('cors')
 const TodoModel = require('./Models/Todo')
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true  // Enable credentials (cookies, authorization headers) cross-origin
+}));
+
 app.use(express.json())
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
