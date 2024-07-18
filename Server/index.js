@@ -5,7 +5,7 @@ const TodoModel = require('./Models/Todo')
 
 const app = express()
 app.use(cors({
-  origin: '*',
+  origin: 'https://to-do-list-frontend-sigma.vercel.app/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true  // Enable credentials (cookies, authorization headers) cross-origin
