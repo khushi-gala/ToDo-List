@@ -8,20 +8,20 @@ function Home() {
     const [todos, setTodos ] = useState([])
     console.log(todos);
     useEffect(() => {
-        axios.get('http://localhost:3002/get')
+        axios.get('https://to-do-list-silk-eta.vercel.app/get')
         .then(result => setTodos(result.data))
         .catch(err => console.log(err))
     }, [])
     
     const handleEdit = (id) =>{
-        axios.put(`http://localhost:3002/update/${id}`)
+        axios.put(`https://to-do-list-silk-eta.vercel.app/update/${id}`)
         .then(result =>{
             setTodos(todos.map(todo => todo._id === id ? { ...todo, done: true } : todo));
         })
         .catch(err => console.log(err))
     }  
     const handleDelete = (id) =>{
-        axios.delete(`http://localhost:3002/delete/${id}`)
+        axios.delete(`https://to-do-list-silk-eta.vercel.app/delete/${id}`)
         .then(result => {
             setTodos(todos.filter(todo => todo._id !== id));
         })
