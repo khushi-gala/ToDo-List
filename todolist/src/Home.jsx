@@ -6,7 +6,7 @@ import { BsCircleFill, BsFillCheckCircleFill, BsFillTrashFill } from "react-icon
 
 function Home() {
     const [todos, setTodos ] = useState([])
-    // console.log(todos);
+    console.log(todos);
     useEffect(() => {
         axios.get('http://localhost:3002/get')
         .then(result => setTodos(result.data))
