@@ -4,7 +4,7 @@ function Create() {
     const [task, setTask] = useState()
     
     const handleAdd = () =>{
-        axios.post('http://localhost:3002/add', {task: task})
+        axios.post('https://to-do-list-silk-eta.vercel.app/add', {task: task})
         .then(result => location.reload() )
         .catch(err => console.log(err))
     }
